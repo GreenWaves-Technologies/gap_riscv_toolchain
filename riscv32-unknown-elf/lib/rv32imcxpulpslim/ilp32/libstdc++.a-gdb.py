@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/home/haugoug/src/pulp-sdk/pkg/pulp_riscv_gcc/1.0.5/share/gcc-7.1.1/python'
-libdir = '/home/haugoug/src/pulp-sdk/pkg/pulp_riscv_gcc/1.0.5/riscv32-unknown-elf/lib/rv32imcxpulpslim/ilp32'
+pythondir = '/home/yao/Projects/SDK/release_tools/toolchain/build/riscv/share/gcc-7.1.1/python'
+libdir = '/home/yao/Projects/SDK/release_tools/toolchain/build/riscv/riscv32-unknown-elf/lib/rv32imcxpulpslim/ilp32'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't

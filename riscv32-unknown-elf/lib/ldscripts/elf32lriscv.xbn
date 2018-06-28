@@ -7,7 +7,7 @@ OUTPUT_FORMAT("elf32-littleriscv", "elf32-littleriscv",
 	      "elf32-littleriscv")
 OUTPUT_ARCH(riscv)
 ENTRY(_start)
-SEARCH_DIR("/home/haugoug/src/pulp-sdk/pkg/pulp_riscv_gcc/1.0.5/riscv32-unknown-elf/lib");
+SEARCH_DIR("/home/yao/Projects/SDK/release_tools/toolchain/build/riscv/riscv32-unknown-elf/lib");
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */
