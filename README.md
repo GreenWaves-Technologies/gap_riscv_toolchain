@@ -12,5 +12,10 @@ sudo apt-get install git-lfs
 git lfs install
 ~~~~~
 
-For compiling the toolchain, please clone the source from:
+Please use the git lfs to download gap_riscv_toolchain:
+~~~~~shell
+git lfs clone https://github.com/GreenWaves-Technologies/gap_riscv_toolchain.git
+~~~~~
+
+If you want to compiling the toolchain by yourseves, please clone the source from:
 https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
