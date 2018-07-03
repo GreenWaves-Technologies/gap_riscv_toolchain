@@ -5,7 +5,7 @@ if [ ! -d "$DIR_TOOLCHAIN" ]; then
     cd /usr/lib/gap_riscv_toolchain/bin
     for eachFile in *
     do
-        sudo ln -s $PWD/$eachFile /usr/bin/$eachFile
+        sudo ln -fs $PWD/$eachFile /usr/bin/$eachFile
     done
 else
     echo "$DIR_TOOLCHAIN already exist!!! Please remove it if you want to update"
