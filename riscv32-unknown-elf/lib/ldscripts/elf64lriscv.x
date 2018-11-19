@@ -7,7 +7,7 @@ OUTPUT_FORMAT("elf64-littleriscv", "elf64-littleriscv",
 	      "elf64-littleriscv")
 OUTPUT_ARCH(riscv)
 ENTRY(_start)
-SEARCH_DIR("/home/yao/Projects/SDK/release_tools/toolchain/build/riscv/riscv32-unknown-elf/lib");
+SEARCH_DIR("/home/yao/Projects/SDK/release_tools/toolchain/toolchain_new/riscv32-unknown-elf/lib");
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */

@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/home/yao/Projects/SDK/release_tools/toolchain/build/riscv/share/gcc-7.1.1/python'
-libdir = '/home/yao/Projects/SDK/release_tools/toolchain/build/riscv/riscv32-unknown-elf/lib/gap8/ilp32'
+pythondir = '/home/yao/Projects/SDK/release_tools/toolchain/toolchain_new/share/gcc-7.1.1/python'
+libdir = '/home/yao/Projects/SDK/release_tools/toolchain/toolchain_new/riscv32-unknown-elf/lib/gap8/ilp32'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't
