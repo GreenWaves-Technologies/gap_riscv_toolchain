@@ -60,8 +60,10 @@ enum machine_mode
 #define HAVE_UDAmode
   UTAmode,                 /* machmode.def:237 */
 #define HAVE_UTAmode
-  HFmode,                  /* config/riscv/riscv-modes.def:27 */
+  HFmode,                  /* config/riscv/riscv-modes.def:26 */
 #define HAVE_HFmode
+  OHFmode,                 /* config/riscv/riscv-modes.def:27 */
+#define HAVE_OHFmode
   SFmode,                  /* machmode.def:209 */
 #define HAVE_SFmode
   DFmode,                  /* machmode.def:210 */
@@ -84,6 +86,8 @@ enum machine_mode
 #define HAVE_CDImode
   CTImode,                 /* machmode.def:245 */
 #define HAVE_CTImode
+  OHCmode,                 /* machmode.def:246 */
+#define HAVE_OHCmode
   HCmode,                  /* machmode.def:246 */
 #define HAVE_HCmode
   SCmode,                  /* machmode.def:246 */
@@ -92,14 +96,24 @@ enum machine_mode
 #define HAVE_DCmode
   TCmode,                  /* machmode.def:246 */
 #define HAVE_TCmode
-  V2QImode,                /* config/riscv/riscv-modes.def:40 */
+  V2QImode,                /* config/riscv/riscv-modes.def:36 */
 #define HAVE_V2QImode
-  V4QImode,                /* config/riscv/riscv-modes.def:38 */
+  V4QImode,                /* config/riscv/riscv-modes.def:34 */
 #define HAVE_V4QImode
-  V2HImode,                /* config/riscv/riscv-modes.def:38 */
+  V2HImode,                /* config/riscv/riscv-modes.def:34 */
 #define HAVE_V2HImode
-  V2HFmode,                /* config/riscv/riscv-modes.def:39 */
+  V2OHFmode,               /* config/riscv/riscv-modes.def:35 */
+#define HAVE_V2OHFmode
+  V2HFmode,                /* config/riscv/riscv-modes.def:35 */
 #define HAVE_V2HFmode
+  V1SFmode,                /* config/riscv/riscv-modes.def:38 */
+#define HAVE_V1SFmode
+  V4HFmode,                /* config/riscv/riscv-modes.def:40 */
+#define HAVE_V4HFmode
+  V4OHFmode,               /* config/riscv/riscv-modes.def:41 */
+#define HAVE_V4OHFmode
+  V2SFmode,                /* config/riscv/riscv-modes.def:39 */
+#define HAVE_V2SFmode
   MAX_MACHINE_MODE,
 
   MIN_MODE_RANDOM = VOIDmode,
@@ -138,7 +152,7 @@ enum machine_mode
   MIN_MODE_COMPLEX_INT = CQImode,
   MAX_MODE_COMPLEX_INT = CTImode,
 
-  MIN_MODE_COMPLEX_FLOAT = HCmode,
+  MIN_MODE_COMPLEX_FLOAT = OHCmode,
   MAX_MODE_COMPLEX_FLOAT = TCmode,
 
   MIN_MODE_VECTOR_INT = V2QImode,
@@ -156,8 +170,8 @@ enum machine_mode
   MIN_MODE_VECTOR_UACCUM = VOIDmode,
   MAX_MODE_VECTOR_UACCUM = VOIDmode,
 
-  MIN_MODE_VECTOR_FLOAT = V2HFmode,
-  MAX_MODE_VECTOR_FLOAT = V2HFmode,
+  MIN_MODE_VECTOR_FLOAT = V2OHFmode,
+  MAX_MODE_VECTOR_FLOAT = V2SFmode,
 
   NUM_MACHINE_MODES = MAX_MACHINE_MODE
 };
@@ -215,6 +229,7 @@ mode_size_inline (machine_mode mode)
     case UDAmode: return 8;
     case UTAmode: return 16;
     case HFmode: return 2;
+    case OHFmode: return 2;
     case SFmode: return 4;
     case TFmode: return 16;
     case SDmode: return 4;
@@ -225,13 +240,19 @@ mode_size_inline (machine_mode mode)
     case CSImode: return 8;
     case CDImode: return 16;
     case CTImode: return 32;
+    case OHCmode: return 4;
     case HCmode: return 4;
     case SCmode: return 8;
     case TCmode: return 32;
     case V2QImode: return 2;
     case V4QImode: return 4;
     case V2HImode: return 4;
+    case V2OHFmode: return 4;
     case V2HFmode: return 4;
+    case V1SFmode: return 4;
+    case V4HFmode: return 8;
+    case V4OHFmode: return 8;
+    case V2SFmode: return 8;
     default: return mode_size[mode];
     }
 }
@@ -276,6 +297,7 @@ mode_nunits_inline (machine_mode mode)
     case UDAmode: return 1;
     case UTAmode: return 1;
     case HFmode: return 1;
+    case OHFmode: return 1;
     case SFmode: return 1;
     case DFmode: return 1;
     case TFmode: return 1;
@@ -287,6 +309,7 @@ mode_nunits_inline (machine_mode mode)
     case CSImode: return 2;
     case CDImode: return 2;
     case CTImode: return 2;
+    case OHCmode: return 2;
     case HCmode: return 2;
     case SCmode: return 2;
     case DCmode: return 2;
@@ -294,7 +317,12 @@ mode_nunits_inline (machine_mode mode)
     case V2QImode: return 2;
     case V4QImode: return 4;
     case V2HImode: return 2;
+    case V2OHFmode: return 2;
     case V2HFmode: return 2;
+    case V1SFmode: return 1;
+    case V4HFmode: return 4;
+    case V4OHFmode: return 4;
+    case V2SFmode: return 2;
     default: return mode_nunits[mode];
     }
 }
@@ -339,6 +367,7 @@ mode_inner_inline (machine_mode mode)
     case UDAmode: return UDAmode;
     case UTAmode: return UTAmode;
     case HFmode: return HFmode;
+    case OHFmode: return OHFmode;
     case SFmode: return SFmode;
     case DFmode: return DFmode;
     case TFmode: return TFmode;
@@ -350,6 +379,7 @@ mode_inner_inline (machine_mode mode)
     case CSImode: return SImode;
     case CDImode: return DImode;
     case CTImode: return TImode;
+    case OHCmode: return OHFmode;
     case HCmode: return HFmode;
     case SCmode: return SFmode;
     case DCmode: return DFmode;
@@ -357,7 +387,12 @@ mode_inner_inline (machine_mode mode)
     case V2QImode: return QImode;
     case V4QImode: return QImode;
     case V2HImode: return HImode;
+    case V2OHFmode: return OHFmode;
     case V2HFmode: return HFmode;
+    case V1SFmode: return SFmode;
+    case V4HFmode: return HFmode;
+    case V4OHFmode: return OHFmode;
+    case V2SFmode: return SFmode;
     default: return mode_inner[mode];
     }
 }
@@ -402,6 +437,7 @@ mode_unit_size_inline (machine_mode mode)
     case UDAmode: return 8;
     case UTAmode: return 16;
     case HFmode: return 2;
+    case OHFmode: return 2;
     case SFmode: return 4;
     case TFmode: return 16;
     case SDmode: return 4;
@@ -412,13 +448,19 @@ mode_unit_size_inline (machine_mode mode)
     case CSImode: return 4;
     case CDImode: return 8;
     case CTImode: return 16;
+    case OHCmode: return 2;
     case HCmode: return 2;
     case SCmode: return 4;
     case TCmode: return 16;
     case V2QImode: return 1;
     case V4QImode: return 1;
     case V2HImode: return 2;
+    case V2OHFmode: return 2;
     case V2HFmode: return 2;
+    case V1SFmode: return 4;
+    case V4HFmode: return 2;
+    case V4OHFmode: return 2;
+    case V2SFmode: return 4;
     default: return mode_unit_size[mode];
     }
 }
@@ -463,6 +505,7 @@ mode_unit_precision_inline (machine_mode mode)
     case UDAmode: return 8*BITS_PER_UNIT;
     case UTAmode: return 16*BITS_PER_UNIT;
     case HFmode: return 2*BITS_PER_UNIT;
+    case OHFmode: return 2*BITS_PER_UNIT;
     case SFmode: return 4*BITS_PER_UNIT;
     case DFmode: return 8*BITS_PER_UNIT;
     case TFmode: return 16*BITS_PER_UNIT;
@@ -474,6 +517,7 @@ mode_unit_precision_inline (machine_mode mode)
     case CSImode: return 4*BITS_PER_UNIT;
     case CDImode: return 8*BITS_PER_UNIT;
     case CTImode: return 16*BITS_PER_UNIT;
+    case OHCmode: return 2*BITS_PER_UNIT;
     case HCmode: return 2*BITS_PER_UNIT;
     case SCmode: return 4*BITS_PER_UNIT;
     case DCmode: return 8*BITS_PER_UNIT;
@@ -481,7 +525,12 @@ mode_unit_precision_inline (machine_mode mode)
     case V2QImode: return 1*BITS_PER_UNIT;
     case V4QImode: return 1*BITS_PER_UNIT;
     case V2HImode: return 2*BITS_PER_UNIT;
+    case V2OHFmode: return 2*BITS_PER_UNIT;
     case V2HFmode: return 2*BITS_PER_UNIT;
+    case V1SFmode: return 4*BITS_PER_UNIT;
+    case V4HFmode: return 2*BITS_PER_UNIT;
+    case V4OHFmode: return 2*BITS_PER_UNIT;
+    case V2SFmode: return 4*BITS_PER_UNIT;
     default: return mode_unit_precision[mode];
     }
 }

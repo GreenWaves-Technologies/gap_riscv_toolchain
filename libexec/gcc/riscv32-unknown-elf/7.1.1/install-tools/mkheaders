@@ -53,7 +53,7 @@ if [ x$1 != x ] ; then
   prefix=$1
   shift
 else
-  prefix=/home/yao/Projects/SDK/release_tools/toolchain/toolchain_new
+  prefix=/home/yao/Projects/SDK/toolchain/pulp-riscv-gnu-toolchain/install
 fi
 
 # Allow for alternate isysroot in which to find headers

@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/yao/Projects/SDK/release_tools/toolchain/toolchain_new/libexec/gcc/riscv32-unknown-elf/7.1.1'
+libdir='/home/yao/Projects/SDK/toolchain/pulp-riscv-gnu-toolchain/install/libexec/gcc/riscv32-unknown-elf/7.1.1'

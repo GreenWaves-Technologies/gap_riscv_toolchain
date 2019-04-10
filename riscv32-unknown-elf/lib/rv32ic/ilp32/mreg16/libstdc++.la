@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/yao/Projects/SDK/release_tools/toolchain/toolchain_new/riscv32-unknown-elf/lib/rv32ic/ilp32/mreg16'
+libdir='/home/yao/Projects/SDK/toolchain/pulp-riscv-gnu-toolchain/install/riscv32-unknown-elf/lib/rv32ic/ilp32/mreg16'

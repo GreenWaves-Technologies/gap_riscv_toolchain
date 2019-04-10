@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file '/home/yao/Projects/SDK/release_tools/toolchain/riscv-gnu-toolchain/riscv-gcc/gcc/config/riscv/riscv.md'.  */
+   from the machine description file '/home/yao/Projects/SDK/toolchain/pulp-riscv-gnu-toolchain/riscv-gcc/gcc/config/riscv/riscv.md'.  */
 
 #ifndef GCC_TM_PREDS_H
 #define GCC_TM_PREDS_H
@@ -75,6 +75,7 @@ enum constraint_num
   CONSTRAINT_f,
   CONSTRAINT_j,
   CONSTRAINT_l,
+  CONSTRAINT_xf,
   CONSTRAINT_I,
   CONSTRAINT_J,
   CONSTRAINT_K,
@@ -93,6 +94,7 @@ enum constraint_num
   CONSTRAINT_YM,
   CONSTRAINT_vIsdc,
   CONSTRAINT_vIusc,
+  CONSTRAINT_vIzzz,
   CONSTRAINT_V,
   CONSTRAINT__l,
   CONSTRAINT__g,
@@ -135,7 +137,7 @@ constraint_satisfied_p (rtx x, enum constraint_num c)
 static inline bool
 insn_extra_register_constraint (enum constraint_num c)
 {
-  return c >= CONSTRAINT_r && c <= CONSTRAINT_l;
+  return c >= CONSTRAINT_r && c <= CONSTRAINT_xf;
 }
 
 static inline bool
@@ -160,7 +162,7 @@ static inline void
 insn_extra_constraint_allows_reg_mem (enum constraint_num c,
 				      bool *allows_reg, bool *allows_mem)
 {
-  if (c >= CONSTRAINT_Z && c <= CONSTRAINT_vIusc)
+  if (c >= CONSTRAINT_Z && c <= CONSTRAINT_vIzzz)
     return;
   if (c >= CONSTRAINT_V && c <= CONSTRAINT__g)
     {
@@ -179,6 +181,7 @@ insn_constraint_len (char fc, const char *str ATTRIBUTE_UNUSED)
     {
     case 'Y': return 2;
     case 'v': return 5;
+    case 'x': return 2;
     default: break;
     }
   return 1;
