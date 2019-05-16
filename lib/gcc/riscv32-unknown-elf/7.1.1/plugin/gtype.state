@@ -21254,7 +21254,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1382 nil  gc_unused "anonymous:/home/yao/Projects/SDK/toolchain/pulp-riscv-gnu-toolchain/riscv-gcc/gcc/config/riscv/riscv.c:2892"nil 
+ (!type struct 1382 nil  gc_unused "anonymous:/home/yao/Projects/SDK/toolchain/pulp-riscv-gnu-toolchain/riscv-gcc/gcc/config/riscv/riscv.c:2894"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -21267,15 +21267,15 @@
   nil 0 nil nil )
  
  (!type struct 1385 nil  gc_used "import_export_symbol"
-  (!srcfileloc  "config/riscv/riscv.c" 6088)
+  (!srcfileloc  "config/riscv/riscv.c" 6090)
   (!fields 2 
    (!pair  "decl"
     (!type already_seen 22)
-    (!srcfileloc  "config/riscv/riscv.c" 6086)
+    (!srcfileloc  "config/riscv/riscv.c" 6088)
     nil )
    (!pair  "name"
     (!type already_seen 8)
-    (!srcfileloc  "config/riscv/riscv.c" 6087)
+    (!srcfileloc  "config/riscv/riscv.c" 6089)
     nil )
   )
   nil 1023 nil nil )
@@ -21285,15 +21285,15 @@
    (!type already_seen 1386)
   )
   gc_pointed_to "vec<import_export_symbol,va_gc>"
-  (!srcfileloc  "config/riscv/riscv.c" 6093)
+  (!srcfileloc  "config/riscv/riscv.c" 6095)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 71)
-    (!srcfileloc  "config/riscv/riscv.c" 6093)
+    (!srcfileloc  "config/riscv/riscv.c" 6095)
     nil )
    (!pair  "import_export_symbol"
     (!type already_seen 1385)
-    (!srcfileloc  "config/riscv/riscv.c" 6093)
+    (!srcfileloc  "config/riscv/riscv.c" 6095)
     nil )
   )
  )
@@ -26150,19 +26150,19 @@
   nil )
  (!pair  "vec<import_export_symbol,va_gc>"
   (!type already_seen 1386)
-  (!srcfileloc  "config/riscv/riscv.c" 6093)
+  (!srcfileloc  "config/riscv/riscv.c" 6095)
   nil )
  (!pair  "import_export_symbol"
   (!type already_seen 1385)
-  (!srcfileloc  "config/riscv/riscv.c" 6088)
+  (!srcfileloc  "config/riscv/riscv.c" 6090)
   nil )
  (!pair  "riscv_save_restore_fn"
   (!type already_seen 2)
-  (!srcfileloc  "config/riscv/riscv.c" 4183)
+  (!srcfileloc  "config/riscv/riscv.c" 4185)
   nil )
  (!pair  "riscv_aggregate_field"
   (!type already_seen 1382)
-  (!srcfileloc  "config/riscv/riscv.c" 2895)
+  (!srcfileloc  "config/riscv/riscv.c" 2897)
   nil )
  (!pair  "use_optype_p"
   (!type already_seen 421)
@@ -29528,11 +29528,11 @@
  )
  (!pair  "export_symbols"
   (!type already_seen 1387)
-  (!srcfileloc  "config/riscv/riscv.c" 6094)
+  (!srcfileloc  "config/riscv/riscv.c" 6096)
   nil )
  (!pair  "import_symbols"
   (!type already_seen 1387)
-  (!srcfileloc  "config/riscv/riscv.c" 6093)
+  (!srcfileloc  "config/riscv/riscv.c" 6095)
   nil )
  (!pair  "riscv_tls_symbol"
   (!type already_seen 128)
